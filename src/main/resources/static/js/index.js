@@ -13,6 +13,6 @@
         var absCurX = Math.abs(curX);
         var absCurY = Math.abs(curY);
 
-        $("#front-end-text").css('text-shadow', -Math.ceil(30 * curX) + 'px ' + -Math.ceil(30 * curY) + 'px ' + Math.ceil(7 * (absCurX > absCurY ? absCurX : absCurY) + 5)  + 'px #000000');
+        $("#front-end-text").css('text-shadow', -Math.ceil(30 * curX) + 'px ' + -Math.ceil(30 * curY) + 'px ' + Math.ceil(7 * (absCurX > absCurY ? absCurX : absCurY) + 3)  + 'px #000000');
     });
 })();

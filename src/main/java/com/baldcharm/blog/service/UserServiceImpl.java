@@ -13,7 +13,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User login(String username) {
-
         User user = userMapperDao.getUserByUsername(username);
 
         return user;

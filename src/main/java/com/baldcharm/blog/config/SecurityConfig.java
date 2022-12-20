@@ -73,7 +73,7 @@ public class SecurityConfig {
             @Override
             public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
                 User user = userService.login(username);
-
+                        
                 if(Objects.isNull(user)) {
                     throw new RuntimeException("No user was found");
                 }
