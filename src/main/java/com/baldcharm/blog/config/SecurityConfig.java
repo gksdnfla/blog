@@ -15,9 +15,11 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import com.baldcharm.blog.entity.LoginUser;
 import com.baldcharm.blog.entity.User;
+import com.baldcharm.blog.filter.AuthenticationFilter;
 import com.baldcharm.blog.service.UserService;
 
 @Configuration
@@ -26,6 +28,9 @@ public class SecurityConfig {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private AuthenticationFilter authenticationFilter;
 
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
@@ -42,6 +47,12 @@ public class SecurityConfig {
         http
             .csrf().disable()
             .authorizeRequests()
+            // .antMatchers(
+            //     "/admin",
+            //     "/admin/**",
+            //     "/api/admin/**"
+            // )
+            // .hasRole("ADMIN")
             .antMatchers(
                 "/", 
                 "/about", 
@@ -52,15 +63,17 @@ public class SecurityConfig {
                 "/css/**",
                 "/images/**"
             )
-            .anonymous()
+            .permitAll()
             .anyRequest()
             .authenticated()
             .and()
+            .addFilterBefore(authenticationFilter, UsernamePasswordAuthenticationFilter.class)
             .sessionManagement()
             .sessionCreationPolicy(SessionCreationPolicy.ALWAYS)
             .and()
             .formLogin()
             .loginPage("/login")
+            .permitAll()
             .and()
             .httpBasic();
 
