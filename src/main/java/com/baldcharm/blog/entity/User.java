@@ -1,6 +1,7 @@
 package com.baldcharm.blog.entity;
 
 import java.sql.Date;
+import java.util.Map;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -22,11 +23,11 @@ public class User {
 
     private String role;
 
-    private User createBy;
+    private Map<String, Object> createBy;
 
     private Date createTime;
 
-    private User updateBy;
+    private Map<String, Object> updateBy;
 
     private Date updateTime;
 }
