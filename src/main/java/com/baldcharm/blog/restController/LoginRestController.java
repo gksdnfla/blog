@@ -4,8 +4,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.baldcharm.blog.entity.LoginUser;
 import com.baldcharm.blog.entity.ResponseResult;
-import com.baldcharm.blog.entity.User;
-import com.baldcharm.blog.service.UserService;
 
 import javax.servlet.http.HttpSession;
 
@@ -22,8 +20,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class LoginRestController {
     @Autowired
     private AuthenticationManager authenticationManager;
-    @Autowired
-    private UserDetailsService userDetailsService;
 
     @PostMapping("/api/login")
     public ResponseResult postMethodName(String username, String password, HttpSession session) {
