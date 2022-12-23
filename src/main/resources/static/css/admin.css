@@ -6,7 +6,7 @@
     position: fixed;
     left: 0;
     top: 0;
-    z-index: 1;
+    z-index: 21;
 }
 
 .admin-header .back-btn {
@@ -91,4 +91,16 @@
 .admin-container {
     margin-top: 50px;
     margin-left: 300px;
+}
+
+.admin-about-container {
+    padding: 20px;
+}
+
+.admin-about-container .btn-bar {
+    margin-bottom: 20px;
+}
+
+.admin-about-container .btn-bar .save-btn {
+    width: 80px;
 }
