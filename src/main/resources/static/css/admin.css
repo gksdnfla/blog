@@ -37,7 +37,7 @@
 
 /* Admin Navigation */
 .admin-nav {
-    width: 300px;
+    width: 250px;
     height: 100%;
     box-sizing: border-box;
     padding: 70px 0 20px;
@@ -76,7 +76,7 @@
 }
 
 .admin-nav .nav-item:hover::before {
-    width: 290px;
+    width: 240px;
 }
 
 .admin-nav .nav-item.active {
@@ -84,13 +84,13 @@
 }
 
 .admin-nav .nav-item.active::before {
-    width: 290px;
+    width: 240px;
 }
 
 /* Admin Content */
 .admin-container {
     margin-top: 50px;
-    margin-left: 300px;
+    margin-left: 250px;
 }
 
 .admin-about-container {

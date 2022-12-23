@@ -23,6 +23,7 @@
 </header>
 
 <nav class="admin-nav" th:fragment="adminNav">
+    <a th:class="${#httpServletRequest.requestURI} == '/admin' ? 'nav-item active' : 'nav-item'" href="/admin">Dashboard</a>
     <a th:class="${#httpServletRequest.requestURI} == '/admin/about' ? 'nav-item active' : 'nav-item'" href="/admin/about">About</a>
     <a th:class="${#httpServletRequest.requestURI} == '/admin/documents' ? 'nav-item active' : 'nav-item'" href="/admin/documents">Documents</a>
     <a th:class="${#httpServletRequest.requestURI} == '/admin/settings' ? 'nav-item active' : 'nav-item'" href="/admin/settings">Settings</a>
