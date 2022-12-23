@@ -10,7 +10,7 @@
             method: 'POST',
             data: data,
             success: function() {
-                // window.location.replace("/admin");
+                window.location.replace("/admin");
             },
             error: function(err) {
                 console.error(err);
